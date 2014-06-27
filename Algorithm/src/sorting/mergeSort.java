@@ -1,7 +1,9 @@
 package sorting;
 import java.lang.Math.*;
 public class mergeSort {
-
+	/*
+	 * Merge the arr[start,mid-1] and arr[mid,end]
+	 */
 	public static void merge(int [] unsort,int start,int mid,int end,int [] sorted)
 	{
 		int i=start,j=mid;
@@ -23,6 +25,7 @@ public class mergeSort {
 //		for(int t:sorted)
 //			System.out.print(t+" ");
 //		System.out.println();
+		//copy the changed number into unsort array
 		for(;start<k;start++)
 			unsort[start]=sorted[start];
 	}
@@ -31,7 +34,7 @@ public class mergeSort {
 	  if(end-start<2)
 		  return;
 	  int mid = (start+end)/2;
-	  
+	  //merge the subs then the whole
 	  merge_sort(unsort,start,mid,sorted);
 	  merge_sort(unsort,mid,end,sorted);
 	  merge(unsort,start,mid,end,sorted);

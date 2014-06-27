@@ -7,7 +7,7 @@ public class quickSort {
 	 if(end-start<=1)
 		 return;
 	 int i=start,j=end-1;
-	 int val=unsort[start];
+	 int val=unsort[start];//select the first as the pivot
 	 int pivot=val;
 	 while(i<j)
 	 {
@@ -20,12 +20,13 @@ public class quickSort {
 			 i++;
 		 if(i!=j)
 		 unsort[j]=unsort[i];
-		 unsort[i]=val;
+		 unsort[i]=val;//place the pivot in its order
 	 }
 //	 System.out.println("Start:"+start+" End:"+end);
 //	 for(int t:unsort)
 //		 System.out.print(t+" ");
 //	 System.out.println();
+	 //then iterate the sub-array
 	 quick_sort(unsort,0,i);
 	 quick_sort(unsort,i+1,end);
 	}

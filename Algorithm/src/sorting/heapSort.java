@@ -1,7 +1,9 @@
 package sorting;
 
 public class heapSort {
-
+	/*
+	 * Building the max heap
+	 */
 	public static void heapAdjust_max(int [] arr,int ind,int len)
 	{
 		int left=2*ind;
@@ -26,9 +28,10 @@ public class heapSort {
 	}
 	public static void heap_sort(int [] unsort)
 	{
+		//first adjust the unsort array into a max or min heap
 		for(int i=unsort.length/2;i>=0;i--)
 			heapAdjust_max(unsort,i,unsort.length);
-		//System.out.println("unsorting");
+		//Then select the maximum
 		for(int i=unsort.length-1;i>0;i--)
 		{
 			int t=unsort[i];
